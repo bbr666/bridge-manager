@@ -19,7 +19,7 @@ network:
     #  .BusinessName - validated WhatsApp business name
     #  .Phone        - phone number (international format)
     #  .FullName     - Name you set in the contacts list
-    displayname_template: {{ `"{{or .FullName .BusinessName .PushName .JID}}"` }}
+    displayname_template: {{ `{{or .FullName .BusinessName .PushName .JID}}` }}
 
     # Should incoming calls send a message to the Matrix room?
     call_start_notices: true
@@ -82,7 +82,7 @@ network:
         full_sync_config:
             # Number of days of history to request.
             # The limit seems to be around 3 years, but using higher values doesn't break.
-            days_limit: 1825
+            days_limit: 10
             # This is presumably the maximum size of the transferred history sync blob, which may affect what the phone includes in the blob.
             size_mb_limit: 512
             # This is presumably the local storage quota, which may affect what the phone includes in the history sync blob.
